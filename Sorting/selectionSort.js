@@ -2,7 +2,6 @@
 function selectionSort(arr ,order = 'ASC'){
     for(var i = 0; i < arr.length; i++){
         var index = i;
-        var hasSwapped = false;
         for (var j = i+1; j < arr.length; j++){
             //swap
             if(order === 'ASC'){
