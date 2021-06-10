@@ -1,6 +1,7 @@
 //combination of merging and sorting
 //exploits the fact that arrays of 0 or 1 element are always sorted
 //using recursion
+//Time Big O: O(n logn) (use space to trade time)
 function mergeSort(arr){
     //base case
     if(arr.length <= 1) return arr;
@@ -35,4 +36,14 @@ function merge(arr1, arr2){
     return res;
 }
 
-console.log(mergeSort([45,677,23,4,90,6,78,23,56,63,24,129]))
+var data = Array.apply(null, {length: 100000}).map(Function.call, Math.random)
+console.log(mergeSort(data))
+
+//Big O of mergeSort
+//operation required to sort an array 
+//O(logn) decompositions O(n) comparisons per decomposition
+//log8 = 3
+//0---      [1,2,3,4,5,6,7,8]
+//1---     [3,4,5,8] [1,2,6,7]
+//2---   [3,8] [4,5] [6,7] [1,2]
+//3---[8] [3] [5] [4] [7] [6] [1] [2]
